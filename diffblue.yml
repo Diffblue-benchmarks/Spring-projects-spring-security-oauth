@@ -180,7 +180,7 @@ units:
      file: org/springframework/security/oauth2/client/http/StringSplitUtils.class
      sourceDir: spring-security-oauth2/src/main/java
      sourceFile: spring-security-oauth2/src/main/java/org/springframework/security/oauth2/client/http/StringSplitUtils.java
-   - dir: spring-security-oauth/target/classes
-     file: spring-security-oauth2/src/main/java/org/springframework/security/oauth2/provider/approval/InMemoryApprovalStore.class
+   - dir: spring-security-oauth2/target/classes
+     file: org/springframework/security/oauth2/provider/approval/InMemoryApprovalStore.class
      sourceDir: spring-security-oauth2/src/main/java
-     sourceFile: spring-security-oauth2/src/main/java/org/springframework/security/oauth2/provider/approval/InMemoryApprovalStore.java
+     sourceFile: org/springframework/security/oauth2/provider/approval/InMemoryApprovalStore.java
