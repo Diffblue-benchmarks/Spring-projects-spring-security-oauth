@@ -177,50 +177,10 @@ phases:
 units:
  - target:
    - dir: spring-security-oauth2/target/classes
-     file: org/springframework/security/oauth2/common/exceptions/OAuth2Exception.class
+     file: org/springframework/security/oauth2/client/http/StringSplitUtils.class
      sourceDir: spring-security-oauth2/src/main/java
-     sourceFile: org/springframework/security/oauth2/common/exceptions/OAuth2Exception.java
-   - dir: spring-security-oauth2/target/classes
-     file: org/springframework/security/oauth2/common/exceptions/RedirectMismatchException.class
+     sourceFile: spring-security-oauth2/src/main/java/org/springframework/security/oauth2/client/http/StringSplitUtils.java
+   - dir: spring-security-oauth/target/classes
+     file: spring-security-oauth2/src/main/java/org/springframework/security/oauth2/provider/approval/InMemoryApprovalStore.class
      sourceDir: spring-security-oauth2/src/main/java
-     sourceFile: org/springframework/security/oauth2/common/exceptions/RedirectMismatchException.java
-   - dir: spring-security-oauth2/target/classes
-     file: org/springframework/security/oauth2/common/exceptions/InvalidScopeException.class
-     sourceDir: spring-security-oauth2/src/main/java
-     sourceFile: org/springframework/security/oauth2/common/exceptions/InvalidScopeException.java
-   - dir: spring-security-oauth2/target/classes
-     file: org/springframework/security/oauth2/common/exceptions/InvalidRequestException.class
-     sourceDir: spring-security-oauth2/src/main/java
-     sourceFile: org/springframework/security/oauth2/common/exceptions/InvalidRequestException.java
-   - dir: spring-security-oauth2/target/classes
-     file: org/springframework/security/oauth2/common/exceptions/UserDeniedAuthorizationException.class
-     sourceDir: spring-security-oauth2/src/main/java
-     sourceFile: org/springframework/security/oauth2/common/exceptions/UserDeniedAuthorizationException.java
-   - dir: spring-security-oauth2/target/classes
-     file: org/springframework/security/oauth2/common/exceptions/ClientAuthenticationException.class
-     sourceDir: spring-security-oauth2/src/main/java
-     sourceFile: org/springframework/security/oauth2/common/exceptions/ClientAuthenticationException.java
-   - dir: spring-security-oauth2/target/classes
-     file: org/springframework/security/oauth2/common/exceptions/InvalidGrantException.class
-     sourceDir: spring-security-oauth2/src/main/java
-     sourceFile: org/springframework/security/oauth2/common/exceptions/InvalidGrantException.java
-   - dir: spring-security-oauth2/target/classes
-     file: org/springframework/security/oauth2/common/exceptions/UnauthorizedClientException.class
-     sourceDir: spring-security-oauth2/src/main/java
-     sourceFile: org/springframework/security/oauth2/common/exceptions/UnauthorizedClientException.java
-   - dir: spring-security-oauth2/target/classes
-     file: org/springframework/security/oauth2/common/exceptions/UnsupportedGrantTypeException.class
-     sourceDir: spring-security-oauth2/src/main/java
-     sourceFile: org/springframework/security/oauth2/common/exceptions/UnsupportedGrantTypeException.java
-   - dir: spring-security-oauth2/target/classes
-     file: org/springframework/security/oauth2/common/exceptions/InvalidTokenException.class
-     sourceDir: spring-security-oauth2/src/main/java
-     sourceFile: org/springframework/security/oauth2/common/exceptions/InvalidTokenException.java
-   - dir: spring-security-oauth2/target/classes
-     file: org/springframework/security/oauth2/common/exceptions/InvalidClientException.class
-     sourceDir: spring-security-oauth2/src/main/java
-     sourceFile: org/springframework/security/oauth2/common/exceptions/InvalidClientException.java
-   - dir: spring-security-oauth2/target/classes
-     file: org/springframework/security/oauth2/common/exceptions/UnsupportedResponseTypeException.class
-     sourceDir: spring-security-oauth2/src/main/java
-     sourceFile: org/springframework/security/oauth2/common/exceptions/UnsupportedResponseTypeException.java
+     sourceFile: spring-security-oauth2/src/main/java/org/springframework/security/oauth2/provider/approval/InMemoryApprovalStore.java
