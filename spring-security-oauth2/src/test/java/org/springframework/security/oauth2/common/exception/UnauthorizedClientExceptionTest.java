@@ -15,50 +15,10 @@ public class UnauthorizedClientExceptionTest {
 
   @Rule public final Timeout globalTimeout = new Timeout(10000);
 
-  /* testedClasses: UnauthorizedClientException */
-  // Test written by Diffblue Cover.
-
-  @Test
-  public void constructorInputNotNullNullOutputVoid() {
-
-    // Arrange
-    final String msg = "BAZ";
-    final Throwable t = null;
-
-    // Act, creating object to test constructor
-    final UnauthorizedClientException objectUnderTest = new UnauthorizedClientException(msg, t);
-
-    // Assert side effects
-    Assert.assertNull(Reflector.getInstanceField(objectUnderTest, "cause"));
-    Assert.assertEquals("BAZ", objectUnderTest.getMessage());
-  }
-
-  // Test written by Diffblue Cover.
-
-  @Test
-  public void constructorInputNotNullOutputVoid() {
-
-    // Arrange
-    final String msg = "3";
-
-    // Act, creating object to test constructor
-    final UnauthorizedClientException objectUnderTest = new UnauthorizedClientException(msg);
-
-    // Assert side effects
-    Assert.assertNotNull(Reflector.getInstanceField(objectUnderTest, "cause"));
-    Assert.assertNull(((OAuth2Exception)Reflector.getInstanceField(objectUnderTest, "cause"))
-                          .getAdditionalInformation());
-    Assert.assertEquals(
-        Reflector.getInstanceField(objectUnderTest, "cause"),
-        Reflector.getInstanceField(Reflector.getInstanceField(objectUnderTest, "cause"), "cause"));
-    Assert.assertEquals(
-        "1a 2b 3c", ((Throwable)Reflector.getInstanceField(objectUnderTest, "cause")).getMessage());
-    Assert.assertEquals("1a 2b 3c", objectUnderTest.getMessage());
-  }
 
   // Test written by Diffblue Cover.
   @Test
-  public void getHttpErrorCodeOutputPositive() {
+  public void testHttpErrorCodeIs401() {
 
     // Arrange
     final UnauthorizedClientException objectUnderTest = new UnauthorizedClientException("/");
@@ -72,7 +32,7 @@ public class UnauthorizedClientExceptionTest {
 
   // Test written by Diffblue Cover.
   @Test
-  public void getOAuth2ErrorCodeOutputNotNull() {
+  public void testOAuth2ErrorCodeIsUnauthorizedClient() {
 
     // Arrange
     final UnauthorizedClientException objectUnderTest = new UnauthorizedClientException("3");

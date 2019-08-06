@@ -15,33 +15,8 @@ public class InvalidClientExceptionTest {
 
   @Rule public final Timeout globalTimeout = new Timeout(10000);
 
-  /* testedClasses: InvalidClientException */
-  // Test written by Diffblue Cover.
-
   @Test
-  public void constructorInputNotNullOutputVoid() {
-
-    // Arrange
-    final String msg = "3";
-
-    // Act, creating object to test constructor
-    final InvalidClientException objectUnderTest = new InvalidClientException(msg);
-
-    // Assert side effects
-    Assert.assertNotNull(Reflector.getInstanceField(objectUnderTest, "cause"));
-    Assert.assertNull(((OAuth2Exception)Reflector.getInstanceField(objectUnderTest, "cause"))
-                          .getAdditionalInformation());
-    Assert.assertEquals(
-        Reflector.getInstanceField(objectUnderTest, "cause"),
-        Reflector.getInstanceField(Reflector.getInstanceField(objectUnderTest, "cause"), "cause"));
-    Assert.assertEquals(
-        "foo", ((Throwable)Reflector.getInstanceField(objectUnderTest, "cause")).getMessage());
-    Assert.assertEquals("foo", objectUnderTest.getMessage());
-  }
-
-  // Test written by Diffblue Cover.
-  @Test
-  public void getHttpErrorCodeOutputPositive() {
+  public void testHttpErrorCodeIs401() {
 
     // Arrange
     final InvalidClientException objectUnderTest = new InvalidClientException("3");
@@ -53,9 +28,8 @@ public class InvalidClientExceptionTest {
     Assert.assertEquals(401, actual);
   }
 
-  // Test written by Diffblue Cover.
   @Test
-  public void getOAuth2ErrorCodeOutputNotNull() {
+  public void testOAuth2ErrorCodeIsInvalidClient() {
 
     // Arrange
     final InvalidClientException objectUnderTest = new InvalidClientException("3");

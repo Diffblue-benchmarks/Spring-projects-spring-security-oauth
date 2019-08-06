@@ -15,49 +15,9 @@ public class InvalidGrantExceptionTest {
 
   @Rule public final Timeout globalTimeout = new Timeout(10000);
 
-  /* testedClasses: InvalidGrantException */
-  // Test written by Diffblue Cover.
-
-  @Test
-  public void constructorInputNotNullNullOutputVoid() {
-
-    // Arrange
-    final String msg = "1a 2b 3c";
-    final Throwable t = null;
-
-    // Act, creating object to test constructor
-    final InvalidGrantException objectUnderTest = new InvalidGrantException(msg, t);
-    // Assert side effects
-    Assert.assertNull(Reflector.getInstanceField(objectUnderTest, "cause"));
-    Assert.assertEquals("1a 2b 3c", objectUnderTest.getMessage());
-  }
-
-  // Test written by Diffblue Cover.
-
-  @Test
-  public void constructorInputNotNullOutputVoid() {
-
-    // Arrange
-    final String msg = "A1B2C3";
-
-    // Act, creating object to test constructor
-    final InvalidGrantException objectUnderTest = new InvalidGrantException(msg);
-
-    // Assert side effects
-    Assert.assertNotNull(Reflector.getInstanceField(objectUnderTest, "cause"));
-    Assert.assertNull(((OAuth2Exception)Reflector.getInstanceField(objectUnderTest, "cause"))
-                          .getAdditionalInformation());
-    Assert.assertEquals(
-        Reflector.getInstanceField(objectUnderTest, "cause"),
-        Reflector.getInstanceField(Reflector.getInstanceField(objectUnderTest, "cause"), "cause"));
-    Assert.assertEquals(
-        "1a 2b 3c", ((Throwable)Reflector.getInstanceField(objectUnderTest, "cause")).getMessage());
-    Assert.assertEquals("1a 2b 3c", objectUnderTest.getMessage());
-  }
-
   // Test written by Diffblue Cover.
   @Test
-  public void getOAuth2ErrorCodeOutputNotNull() {
+  public void testOAuth2ErrorCodeIsInvalidGrant() {
 
     // Arrange
     final InvalidGrantException objectUnderTest = new InvalidGrantException("A1B2C3");

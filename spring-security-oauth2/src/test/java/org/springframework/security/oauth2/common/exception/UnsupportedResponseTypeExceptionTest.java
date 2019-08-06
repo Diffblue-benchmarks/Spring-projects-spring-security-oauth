@@ -16,39 +16,7 @@ public class UnsupportedResponseTypeExceptionTest {
 
   @Rule public final Timeout globalTimeout = new Timeout(10000);
 
-  /* testedClasses: UnsupportedResponseTypeException */
   // Test written by Diffblue Cover.
-
-  @Test
-  public void constructorInputNotNullNullOutputVoid() {
-
-    // Arrange
-    final String msg = "\'";
-    final Throwable t = null;
-
-    // Act, creating object to test constructor
-    final UnsupportedResponseTypeException objectUnderTest =
-        new UnsupportedResponseTypeException(msg, t);
-
-    // Assert side effects
-    Assert.assertNull(Reflector.getInstanceField(objectUnderTest, "cause"));
-    Assert.assertEquals("\'", objectUnderTest.getMessage());
-  }
-
-  // Test written by Diffblue Cover.
-
-  @Test
-  public void constructorInputNotNullOutputVoid() {
-
-    // Arrange
-    final String msg = "A1B2C3";
-
-    // Act, creating object to test constructor
-    final UnsupportedResponseTypeException objectUnderTest =
-        new UnsupportedResponseTypeException(msg);
-
-    // Method returns void, testing that no exception is thrown
-  }
 
   // Test written by Diffblue Cover.
   @Test

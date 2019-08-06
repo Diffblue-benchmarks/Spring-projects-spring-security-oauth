@@ -32,66 +32,6 @@ public class InvalidScopeExceptionTest {
 
   @Rule public final Timeout globalTimeout = new Timeout(10000);
 
-  /* testedClasses: InvalidScopeException */
-  // Test written by Diffblue Cover.
-  @PrepareForTest(OAuth2Utils.class)
-  @Test
-  public void constructorInputNotNullNullOutputVoid() throws Exception {
-
-    // Setup mocks
-    PowerMockito.mockStatic(OAuth2Utils.class);
-
-    // Arrange
-    final String msg = "1a 2b 3c";
-    final Set validScope = null;
-    final Method formatParameterListMethod =
-        DTUMemberMatcher.method(OAuth2Utils.class, "formatParameterList", Collection.class);
-    PowerMockito.doReturn(null)
-        .when(OAuth2Utils.class, formatParameterListMethod)
-        .withArguments(or(isA(Collection.class), isNull(Collection.class)));
-
-    // Act, creating object to test constructor
-    final InvalidScopeException objectUnderTest = new InvalidScopeException(msg, validScope);
-
-    // Assert side effects
-    final TreeMap<String, String> treeMap = new TreeMap<String, String>();
-    treeMap.put("scope", null);
-    Assert.assertEquals(treeMap, objectUnderTest.getAdditionalInformation());
-    Assert.assertNotNull(Reflector.getInstanceField(objectUnderTest, "cause"));
-    Assert.assertEquals(treeMap,
-                        ((OAuth2Exception)Reflector.getInstanceField(objectUnderTest, "cause"))
-                            .getAdditionalInformation());
-    Assert.assertEquals(
-        Reflector.getInstanceField(objectUnderTest, "cause"),
-        Reflector.getInstanceField(Reflector.getInstanceField(objectUnderTest, "cause"), "cause"));
-    Assert.assertEquals(
-        "1a 2b 3c", ((Throwable)Reflector.getInstanceField(objectUnderTest, "cause")).getMessage());
-    Assert.assertEquals("1a 2b 3c", objectUnderTest.getMessage());
-  }
-
-  // Test written by Diffblue Cover.
-
-  @Test
-  public void constructorInputNotNullOutputVoid() {
-
-    // Arrange
-    final String msg = "3";
-
-    // Act, creating object to test constructor
-    final InvalidScopeException objectUnderTest = new InvalidScopeException(msg);
-
-    // Assert side effects
-    Assert.assertNotNull(Reflector.getInstanceField(objectUnderTest, "cause"));
-    Assert.assertNull(((OAuth2Exception)Reflector.getInstanceField(objectUnderTest, "cause"))
-                          .getAdditionalInformation());
-    Assert.assertEquals(
-        Reflector.getInstanceField(objectUnderTest, "cause"),
-        Reflector.getInstanceField(Reflector.getInstanceField(objectUnderTest, "cause"), "cause"));
-    Assert.assertEquals(
-        "1a 2b 3c", ((Throwable)Reflector.getInstanceField(objectUnderTest, "cause")).getMessage());
-    Assert.assertEquals("1a 2b 3c", objectUnderTest.getMessage());
-  }
-
   // Test written by Diffblue Cover.
   @Test
   public void getOAuth2ErrorCodeOutputNotNull() {

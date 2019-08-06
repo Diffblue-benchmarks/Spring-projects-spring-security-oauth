@@ -24,28 +24,13 @@ public class UnsupportedGrantTypeExceptionTest {
 
     // Arrange
     final String msg = "\'";
-    final Throwable t = null;
-
-    // Act, creating object to test constructor
-    final UnsupportedGrantTypeException objectUnderTest = new UnsupportedGrantTypeException(msg, t);
-
-    // Assert side effects
-    Assert.assertNull(Reflector.getInstanceField(objectUnderTest, "cause"));
-    Assert.assertEquals("\'", objectUnderTest.getMessage());
-  }
-
-  // Test written by Diffblue Cover.
-
-  @Test
-  public void constructorInputNotNullOutputVoid() {
-
-    // Arrange
-    final String msg = "A1B2C3";
 
     // Act, creating object to test constructor
     final UnsupportedGrantTypeException objectUnderTest = new UnsupportedGrantTypeException(msg);
 
-    // Method returns void, testing that no exception is thrown
+    // Assert side effects
+    Assert.assertNull(Reflector.getInstanceField(objectUnderTest, "cause"));
+    Assert.assertEquals(msg, objectUnderTest.getMessage());
   }
 
   // Test written by Diffblue Cover.

@@ -19,43 +19,43 @@ public class ClientAuthenticationExceptionTest {
   /* testedClasses: ClientAuthenticationException */
   // Test written by Diffblue Cover.
 
-//  @Test
-//  public void constructorInputNotNullNullOutputVoid() {
-//
-//    // Arrange
-//    final String msg = "BAZ";
-//    final Throwable t = null;
-//
-//    // Act, creating object to test constructor
-//    final ClientAuthenticationException objectUnderTest = new ClientAuthenticationException(msg, t);
-//
-//    // Assert side effects
-//    Assert.assertNull(Reflector.getInstanceField(objectUnderTest, "cause"));
-//    Assert.assertEquals("BAZ", objectUnderTest.getMessage());
-//  }
+  @Test
+  public void constructorInputNotNullNullOutputVoid() {
+
+    // Arrange
+    final String msg = "BAZ";
+    final Throwable t = null;
+
+    // Act, creating object to test constructor
+    final ClientAuthenticationException objectUnderTest = new ClientAuthenticationException(msg, t);
+
+    // Assert side effects
+    Assert.assertNull(Reflector.getInstanceField(objectUnderTest, "cause"));
+    Assert.assertEquals("BAZ", objectUnderTest.getMessage());
+  }
 
   // Test written by Diffblue Cover.
 
-//  @Test
-//  public void constructorInputNotNullOutputVoid() {
-//
-//    // Arrange
-//    final String msg = "Bar";
-//
-//    // Act, creating object to test constructor
-//    final ClientAuthenticationException objectUnderTest = new ClientAuthenticationException(msg);
-//
-//    // Assert side effects
-//    Assert.assertNotNull(Reflector.getInstanceField(objectUnderTest, "cause"));
-//    Assert.assertNull(((OAuth2Exception)Reflector.getInstanceField(objectUnderTest, "cause"))
-//                          .getAdditionalInformation());
-//    Assert.assertEquals(
-//        Reflector.getInstanceField(objectUnderTest, "cause"),
-//        Reflector.getInstanceField(Reflector.getInstanceField(objectUnderTest, "cause"), "cause"));
-//    Assert.assertEquals(
-//        "\'", ((Throwable)Reflector.getInstanceField(objectUnderTest, "cause")).getMessage());
-//    Assert.assertEquals("\'", objectUnderTest.getMessage());
-//  }
+  @Test
+  public void constructorInputNotNullOutputVoid() {
+
+    // Arrange
+    final String msg = "Bar";
+
+    // Act, creating object to test constructor
+    final ClientAuthenticationException objectUnderTest = new ClientAuthenticationException(msg);
+
+    // Assert side effects
+    Assert.assertNotNull(Reflector.getInstanceField(objectUnderTest, "cause"));
+    Assert.assertNull(((OAuth2Exception)Reflector.getInstanceField(objectUnderTest, "cause"))
+                          .getAdditionalInformation());
+    Assert.assertEquals(
+        Reflector.getInstanceField(objectUnderTest, "cause"),
+        Reflector.getInstanceField(Reflector.getInstanceField(objectUnderTest, "cause"), "cause"));
+    Assert.assertEquals(
+        "\'", ((Throwable)Reflector.getInstanceField(objectUnderTest, "cause")).getMessage());
+    Assert.assertEquals("\'", objectUnderTest.getMessage());
+  }
 
   // Test written by Diffblue Cover.
   @Test
